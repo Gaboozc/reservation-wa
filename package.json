@@ -1,7 +1,8 @@
 {
-    "name": "alphadev-react-template",
+    "name": "peter-tech-services",
     "private": true,
     "version": "1.0.0",
+    "description": "Professional appliance repair services website for Peter Tech Services LLC",
     "type": "module",
     "scripts": {
         "dev": "vite",

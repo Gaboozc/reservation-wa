@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
+		<div className="classic-navbar-wrapper">
+			{/* Navbar sin logo */}
+			<nav className="classic-nav">
+				<div className="classic-nav-container">
+					<ul className="classic-nav-menu">
+						<li><Link to="/" className="classic-nav-link">Home</Link></li>
+						<li><Link to="/about" className="classic-nav-link">About</Link></li>
+						<li><Link to="/services" className="classic-nav-link">Services</Link></li>
+						<li><Link to="/contact" className="classic-nav-link">Contact</Link></li>
+						<li><Link to="/emergency" className="classic-nav-link emergency-link">Emergency</Link></li>
+					</ul>
 				</div>
-			</div>
-		</nav>
+			</nav>
+		</div>
 	);
 };
