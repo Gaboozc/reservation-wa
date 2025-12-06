@@ -7,35 +7,32 @@ import {
 } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Services } from "./pages/Services";
-import { Contact } from "./pages/Contact";
-import { Emergency } from "./pages/Emergency";
-import { RefrigeratorService } from "./pages/RefrigeratorService";
-import { WasherDryerService } from "./pages/WasherDryerService";
+import { Single } from "./pages/Single";
+import { Demo } from "./pages/Demo";
+import ReservaForm from "./components/ReservaForm";
+import Catalogo from "./components/Catalogo";
+import MisReservas from "./components/MisReservas";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
-    // Peter Tech Services routing structure
-    // All routes include the Navbar and Footer via the Layout component
+    // CreateRoutesFromElements function allows you to build route elements declaratively.
+    // Create your routes here, if you want to keep the Navbar and Footer in all views, add your new routes inside the containing Route.
+    // Root, on the contrary, create a sister Route, if you have doubts, try it!
+    // Note: keep in mind that errorElement will be the default page when you don't get a route, customize that page to make your project more attractive.
+    // Note: The child paths of the Layout element replace the Outlet component with the elements contained in the "element" attribute of these child paths.
 
-      // Root Route: All navigation starts from here
-      <Route path="/" element={<Layout />} errorElement={<h1>Page Not Found - Peter Tech Services</h1>} >
+      // Root Route: All navigation will start from here.
+      <Route path="/" element={<Layout />} errorElement={<h1>Not found!</h1>} >
 
-        {/* Main Pages */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/emergency" element={<Emergency />} />
+        {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
+        <Route path= "/" element={<Home />} />
+        <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
+        <Route path="/demo" element={<Demo />} />
         
-        {/* Individual Service Pages */}
-        <Route path="/services/refrigerator" element={<RefrigeratorService />} />
-        <Route path="/services/washer-dryer" element={<WasherDryerService />} />
-        
-        {/* Legacy routes - to be removed later */}
-        <Route path="/single/:theId" element={<Home />} />
-        <Route path="/demo" element={<Home />} />
+        {/* Sistema de Reservas */}
+        <Route path="/reservar" element={<ReservaForm />} />
+        <Route path="/catalogo" element={<Catalogo />} />
+        <Route path="/mis-reservas" element={<MisReservas />} />
       </Route>
     )
 );
