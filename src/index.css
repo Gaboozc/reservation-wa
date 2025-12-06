@@ -1,0 +1,1825 @@
+/* Expert Technicians + Image Box Section */
+.expert-stats-section {
+  background: #f6f9fc;
+  padding: 70px 0 60px 0;
+}
+.expert-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+.expert-text-block {
+  text-align: left;
+}
+.expert-text-block h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.expert-text-block p {
+  font-size: 1.25rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+}
+
+/* Image Box with Stat Below */
+.image-stat-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-box {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(30,41,59,0.15);
+  margin-bottom: 1.5rem;
+}
+
+.image-background {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+              url('https://jailstojobs.org/wp-content/uploads/2021/11/FredsApplianceAcademy.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.stat-text-below {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-text-below .stat-number {
+  font-size: 3.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.3rem;
+  line-height: 1;
+  display: block;
+}
+
+.stat-text-below .stat-label {
+  color: #64748b;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+/* Expert Technicians Section (Separated) - Legacy */
+.expert-technicians-section {
+  background: #f6f9fc;
+  padding: 70px 0 60px 0;
+}
+
+.expert-text-block {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.expert-text-block h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.expert-text-block p {
+  font-size: 1.25rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+}
+
+/* Photo Section with 500+ Overlay */
+.photo-overlay-section {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.photo-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+              url('https://jailstojobs.org/wp-content/uploads/2021/11/FredsApplianceAcademy.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.stat-card-overlay-corner {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  min-width: 200px;
+}
+
+.stat-card-overlay-corner .stat-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  display: block;
+}
+
+.stat-card-overlay-corner .stat-label {
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+/* Expert Technicians + Stat Card Section (Legacy - keeping for reference) */
+.expert-stats-section {
+  background: #f6f9fc;
+  padding: 70px 0 60px 0;
+}
+.expert-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+.expert-text-block {
+  text-align: left;
+}
+.expert-text-block h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.expert-text-block p {
+  font-size: 1.25rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+}
+.features-list {
+  margin-bottom: 2.5rem;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.1rem;
+  color: #334155;
+}
+.checkmark {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+.stat-card-plain {
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(30,41,59,0.13);
+  border-radius: 20px;
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 280px;
+  max-width: 340px;
+  margin: 0 auto;
+  position: relative;
+  border: none;
+}
+.stat-card-plain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+}
+.stat-number {
+  font-size: 4.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  display: block;
+}
+.stat-label-dark {
+  color: #64748b;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: none;
+  display: block;
+}
+.service-cards {
+  padding-top: 15px; /* increased spacing as requested */
+}
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem; /* Increased separation between the 3 cards */
+  max-width: 1200px;
+  margin: 0 auto 70px auto;
+}
+.service-card-modern {
+  height: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(30,41,59,0.10);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.service-card-modern:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(30,41,59,0.18);
+}
+.service-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.service-overlay {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(30,41,59,0.0) 0%, rgba(30,41,59,0.85) 100%);
+  color: white;
+  padding: 2.2rem 2rem 2rem 2rem;
+  border-radius: 0 0 20px 20px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.service-overlay h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.service-overlay p {
+  color: rgba(255,255,255,0.92);
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+.service-overlay .btn {
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 12px 28px;
+  box-shadow: 0 2px 8px rgba(255,107,53,0.10);
+  background: #ff6b35;
+  border: 2px solid #ff6b35;
+  color: #fff;
+  transition: background 0.2s, border 0.2s;
+}
+.service-overlay .btn:hover {
+  background: #f7931e;
+  border-color: #f7931e;
+}
+@media (max-width: 900px) {
+  .expert-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .stat-card-plain {
+    margin-top: 2.5rem;
+  }
+  .service-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* keep tighter spacing on mobile */
+  }
+  
+  /* Mobile adjustments for expert section */
+  .expert-text-block {
+    text-align: center;
+  }
+  
+  .image-box {
+    height: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  .stat-text-below .stat-number {
+    font-size: 2.8rem;
+  }
+  
+  .stat-text-below .stat-label {
+    font-size: 1.1rem;
+  }
+  
+  /* Mobile adjustments for photo overlay section */
+  .photo-overlay-section {
+    height: 400px;
+  }
+  
+  .stat-card-overlay-corner {
+    top: 20px;
+    right: 20px;
+    padding: 2rem 1.5rem;
+    min-width: 160px;
+  }
+  
+  .stat-card-overlay-corner .stat-number {
+    font-size: 2.8rem;
+  }
+  
+  .stat-card-overlay-corner .stat-label {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .service-cards-grid {
+    gap: 3.5rem; /* slightly more separation on very wide screens */
+  }
+}
+/* Sección 500+ Happy Customers */
+.stat-card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0 30px 0;
+  background: none;
+}
+
+.stat-card {
+  position: relative;
+  width: 370px;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: flex-end;
+  margin: 0 auto;
+}
+
+.stat-card-img {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7) grayscale(0.1);
+  z-index: 1;
+}
+
+.stat-card-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(30,41,59,0.7) 100%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 4.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  display: block;
+}
+
+.stat-label {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  display: block;
+}
+/* Forzar texto blanco en el footer, incluyendo Business Hours */
+.footer-section, .footer-section *, .footer-section h4, .footer-section p, .footer-section strong {
+  color: #fff !important;
+}
+/* Peter Tech Services - Paleta Original: Dorado (#C4982A), Negro (#1a1a1a), Blanco (#ffffff) */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Stats card image styles */
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #4a4a4a;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Botones con paleta correcta */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  min-height: 52px;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: #C4982A;
+  color: white;
+  border: 2px solid #C4982A;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.btn-primary:hover {
+  background-color: #B8862A;
+  border-color: #B8862A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(196, 152, 42, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+.btn-learn-more {
+  background-color: #C4982A;
+  color: white;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 2px solid #C4982A;
+}
+
+.btn-learn-more:hover {
+  background-color: #B8862A;
+  border-color: #B8862A;
+  transform: translateY(-2px);
+}
+
+.btn-schedule {
+  background-color: #C4982A;
+  color: white;
+  padding: 16px 32px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #C4982A;
+}
+
+.btn-schedule:hover {
+  background-color: #B8862A;
+  border-color: #B8862A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(196, 152, 42, 0.3);
+}
+
+/* NAVBAR CLÁSICO - COMPLETAMENTE NUEVO */
+/* Wrapper principal del navbar */
+.classic-navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  height: 80px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #C4982A;
+}
+
+/* Navegación */
+.classic-nav {
+  height: 100%;
+}
+
+.classic-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Menu principal */
+.classic-nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+  align-items: center;
+}
+
+.classic-nav-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Links del navbar */
+.classic-nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.classic-nav-link:hover {
+  background-color: rgba(196, 152, 42, 0.1);
+  color: #C4982A;
+  transform: translateY(-1px);
+}
+
+/* Link de emergencia especial */
+.classic-nav-link.emergency-link {
+  background-color: #C4982A;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.classic-nav-link.emergency-link:hover {
+  background-color: #B8862A;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(196, 152, 42, 0.4);
+}
+
+.call-button {
+  background-color: #C4982A;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 2px solid #C4982A;
+}
+
+.call-button:hover {
+  background-color: #B8862A;
+  border-color: #B8862A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(196, 152, 42, 0.4);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #C4982A;
+}
+
+/* Hero Section con paleta correcta */
+.hero {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 120px 0 80px 0; /* Espacio para el nuevo navbar clásico */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(196, 152, 42, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(196, 152, 42, 0.05) 0%, transparent 50%);
+}
+
+/* HERO FLEX LAYOUT */
+.hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px; /* reducir para que no sea tan ancho */
+  margin: 0 auto;
+  padding: 40px 0 30px 0; /* reducir padding vertical */
+}
+
+.hero-logo.big {
+  flex: 0 0 350px; /* reducir el ancho para que no sea tan grande */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none; /* centrar dentro de su propio espacio */
+}
+
+.hero-logo.big img {
+  height: 450px; /* reducir tamaño del logo para balance */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.3));
+}
+
+.hero-content {
+  flex: 1 1 0%;
+  min-width: 0;
+  text-align: center; /* cambiar de left a center */
+  max-width: 1000px; /* más ancho para controlar líneas */
+  margin: 0;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 3.6rem; /* tender a 2 líneas */
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  line-height: 1.08;
+  letter-spacing: -1px;
+  max-width: 1100px; /* permitir que la primera línea no se parta */
+  text-align: center; /* centrar el título */
+}
+
+.hero-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-align: center; /* centrar el párrafo */
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Sección de Servicios Profesionales */
+.professional-services {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.professional-services h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.service-card-modern {
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.service-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Refrigerator - Con imagen de fondo */
+.refrigerator-bg {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%),
+              url('https://www.smartappliance.co.za/wp-content/uploads/elementor/thumbs/fridge-repair-in-kingsburgh--qj2jpwljnrlfqz0myosjjs4rhrqgp2dnw9tv1bcjzc.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Washer & Dryer - Con imagen de fondo */
+.washer-dryer-bg {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%),
+              url('https://appliancerepairexpert.ca/wp-content/uploads/2024/10/Washing-Machine-repair-Promo3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dishwasher - Con imagen de fondo */
+.dishwasher-bg {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%),
+              url('https://img.freepik.com/premium-photo/repair-dishwashers-master-has-come-home-is-repairing-dishwasher_493343-14394.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.service-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.service-card-modern:hover .service-overlay {
+  transform: translateY(0);
+}
+
+.service-overlay h3 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.service-overlay p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* Expert Technicians Section */
+.expert-technicians {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.expert-content {
+  display: block;
+}
+
+.expert-text h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.expert-text p {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.features-list {
+  margin-bottom: 3rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.checkmark {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.expert-stats {
+  position: relative;
+}
+
+.stat-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(196, 152, 42, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+}
+
+.stat-number {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Call to Action */
+.cta {
+  background: linear-gradient(135deg, #0f172a 0%, #1e2a3a 100%);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(196, 152, 42, 0.08) 0%, transparent 50%);
+}
+
+.cta .container {
+  position: relative;
+  z-index: 2;
+}
+
+.cta h2 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Elegant Footer */
+.footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e2a3a 100%);
+  color: white;
+  padding: 80px 0 30px;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(196, 152, 42, 0.5), transparent);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #C4982A;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+  color: #C4982A;
+  padding-left: 5px;
+}
+
+.contact-info p {
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  margin-top: 30px;
+}
+
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.bottom-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.certifications {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.certifications span {
+  padding: 4px 12px;
+  background: rgba(196, 152, 42, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(196, 152, 42, 0.2);
+  font-size: 0.8rem;
+}
+
+/* Page Specific Styles */
+
+/* About Page */
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://media.istockphoto.com/id/181902087/photo/home-appliance.jpg?s=612x612&w=0&k=20&c=phBS_iX44SphuO27sLvR80vRDraCjOxrE43F-5NzEWc=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 120px 0 80px 0; /* Espacio para el nuevo navbar clásico */
+  text-align: center;
+}
+
+.about-hero h1 {
+  color: white;
+  font-size: 2.5rem; /* tamaño consistente */
+}
+
+.about-hero p {
+  color: white; /* cambiar de #f0f0f0 a blanco */
+  font-size: 1.2rem;
+}
+
+.company-story {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.experience {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.experience-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(196, 152, 42, 0.15);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(196, 152, 42, 0.25);
+}
+
+.experience-item h3 {
+  color: #C4982A;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Services Page */
+.services-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://media.istockphoto.com/id/181902087/photo/home-appliance.jpg?s=612x612&w=0&k=20&c=phBS_iX44SphuO27sLvR80vRDraCjOxrE43F-5NzEWc=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 120px 0 80px 0; /* Espacio para el nuevo navbar clásico */
+  text-align: center;
+}
+
+.services-hero h1 {
+  color: white;
+  font-size: 2.5rem; /* tamaño consistente */
+}
+
+.services-hero p {
+  color: white; /* agregar párrafo blanco */
+  font-size: 1.2rem;
+}
+
+.main-services {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.service-category {
+  background: #f8f8f8;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.service-category:hover {
+  box-shadow: 0 10px 30px rgba(196, 152, 42, 0.15);
+}
+
+.service-category h2 {
+  color: #C4982A;
+  margin-bottom: 1rem;
+}
+
+.service-details ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Contact Page */
+.contact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://media.istockphoto.com/id/181902087/photo/home-appliance.jpg?s=612x612&w=0&k=20&c=phBS_iX44SphuO27sLvR80vRDraCjOxrE43F-5NzEWc=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 120px 0 80px 0; /* Espacio para el nuevo navbar clásico */
+  text-align: center;
+}
+
+.contact-hero h1 {
+  color: white;
+  font-size: 2.5rem; /* tamaño consistente */
+}
+
+.contact-hero p {
+  color: white; /* agregar párrafo blanco */
+  font-size: 1.2rem;
+}
+
+.contact-info {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.contact-item {
+  margin-bottom: 2rem;
+}
+
+.contact-item h3 {
+  color: #C4982A;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form {
+  background: #f8f8f8;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #C4982A;
+  box-shadow: 0 0 0 3px rgba(196, 152, 42, 0.1);
+}
+
+/* Emergency Page */
+.emergency-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://media.istockphoto.com/id/181902087/photo/home-appliance.jpg?s=612x612&w=0&k=20&c=phBS_iX44SphuO27sLvR80vRDraCjOxrE43F-5NzEWc=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 80px 0 60px 0; /* reducir padding vertical */
+  text-align: center;
+}
+
+.emergency-hero h1 {
+  color: white;
+  font-size: 2.2rem; /* reducir tamaño */
+  margin-bottom: 1rem;
+}
+
+.emergency-hero h2 {
+  color: white;
+  font-size: 1.8rem; /* reducir tamaño */
+  margin-bottom: 1.5rem;
+}
+
+.emergency-hero p {
+  color: white;
+  font-size: 1.1rem; /* reducir tamaño */
+  margin-bottom: 2rem;
+}
+
+.emergency-number {
+  margin: 2rem 0;
+}
+
+/* Botón de emergencia especial */
+.btn-emergency-large {
+  background-color: #C4982A !important;
+  color: white !important;
+  padding: 18px 36px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 3px solid #C4982A;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(196, 152, 42, 0.3);
+  text-shadow: none;
+}
+
+.btn-emergency-large:hover {
+  background-color: #B8862A !important;
+  border-color: #B8862A;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(196, 152, 42, 0.4);
+  color: white !important;
+}
+
+.emergency-phone {
+  font-size: 2rem;
+  color: #C4982A;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.emergency-phone:hover {
+  color: #B8862A;
+}
+
+.emergency-situations {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.emergency-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.emergency-type {
+  background: #f8f8f8;
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid #C4982A;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.emergency-type:hover {
+  box-shadow: 0 10px 30px rgba(196, 152, 42, 0.15);
+}
+
+.emergency-type h3 {
+  color: #C4982A;
+  margin-bottom: 1rem;
+}
+
+.emergency-type ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+/* Additional professional styles for gold, black, white theme */
+
+.emergency-contact {
+  background: linear-gradient(135deg, #1a1a1a 0%, #C4982A 100%);
+  padding: 60px 0;
+  color: white;
+}
+
+.emergency-box {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(196, 152, 42, 0.3);
+}
+
+.emergency-box h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.emergency-box p {
+  color: #f0f0f0;
+  margin-bottom: 1.5rem;
+}
+
+.why-contact-us {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.reason {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.reason:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(196, 152, 42, 0.15);
+}
+
+.reason h3 {
+  color: #C4982A;
+  margin-bottom: 1rem;
+}
+
+/* Service specific page improvements */
+.service-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://media.istockphoto.com/id/181902087/photo/home-appliance.jpg?s=612x612&w=0&k=20&c=phBS_iX44SphuO27sLvR80vRDraCjOxrE43F-5NzEWc=');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 120px 0 80px 0; /* Espacio para el nuevo navbar clásico */
+  text-align: center;
+}
+
+.service-hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-hero p {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.common-problems {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.problem-item {
+  background: #f8f8f8;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.problem-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(196, 152, 42, 0.15);
+}
+
+.problem-item h3 {
+  color: #C4982A;
+  margin-bottom: 1rem;
+}
+
+.brands-serviced {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.brand {
+  background: white;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #1a1a1a;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.brand:hover {
+  background: #C4982A;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.repair-process {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.step h3 {
+  color: #C4982A;
+  margin-bottom: 1rem;
+}
+
+.step::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #C4982A;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.maintenance-tips {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.tip {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.tip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(196, 152, 42, 0.15);
+}
+
+.tip h3 {
+  color: #C4982A;
+  margin-bottom: 1rem;
+}
+/* Elegant Responsive Design */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .navbar-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    background: rgba(15, 23, 42, 0.95);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(196, 152, 42, 0.2);
+  }
+  
+  .navbar-menu.open {
+    display: flex;
+  }
+  
+  .brand-container {
+    gap: 0.8rem;
+  }
+  
+  .brand-text {
+    font-size: 1.1rem;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .logo-placeholder {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .professional-services h2 {
+    font-size: 2.2rem;
+  }
+  
+  .services-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-card-modern {
+    height: 280px;
+  }
+  
+  .expert-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .expert-text h2 {
+    font-size: 2rem;
+  }
+  
+  .stat-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .certifications {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .hero {
+    padding: 80px 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.1rem;
+    line-height: 1.15;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+  }
+  
+  .professional-services,
+  .expert-technicians,
+  .cta {
+    padding: 60px 0;
+  }
+  
+  .professional-services h2 {
+    font-size: 1.8rem;
+  }
+  
+  .expert-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+  }
+  
+  .service-card-modern {
+    height: 250px;
+  }
+  
+  .service-overlay {
+    padding: 1.5rem;
+  }
+  
+  .service-overlay h3 {
+    font-size: 1.3rem;
+  }
+  
+  .brand-text {
+    font-size: 1rem;
+  }
+  
+  .brand-subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .logo-placeholder {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
