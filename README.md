@@ -1,33 +1,89 @@
-# WebApp Template with React JS
+# Peter Tech Services LLC - Professional Appliance Repair Website
 
+A comprehensive React-based website for Peter Tech Services LLC, a professional appliance repair company. This multi-page website provides customers with easy access to services, contact information, and emergency repair options.
 
-Created by AlphaDev, this template is proprietary software designed exclusively for AlphaDev use. It helps to bootstrap multi-page web applications by integrating with React latest version, vercel deployments and Vite for bundling.
+## 🔧 Features
 
-### Getting stated:
+- **Multi-page structure** with dedicated pages for each service area
+- **Responsive design** that works on desktop, tablet, and mobile devices
+- **Professional styling** focused on the appliance repair industry
+- **Emergency service section** for urgent repair needs
+- **Contact forms** for service requests
+- **Service-specific pages** for different appliance types
+- **Company information** and service area details
 
-> 📦 Make sure you are using at least node version 18.
+## 📋 Pages Included
 
-1. Install the node package dependencies by typing: `$ npm install`
+- **Home** - Hero section, services overview, and call-to-action
+- **About** - Company story, experience, and certifications
+- **Services** - Complete list of appliance repair services
+- **Contact** - Contact form, business hours, and location info
+- **Emergency** - 24/7 emergency service information
+- **Individual Service Pages** - Detailed info for specific appliances
 
-2. Create a .env file by typing `$ cp .env.example .env`
+## 🚀 Getting Started
 
-3. Start coding! and the vite dev server with live reload by typing: `$ npm run start`
+> 📦 Make sure you are using at least Node.js version 18.
 
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser and visit `http://localhost:3000`
+
+## 🎨 Customization
 
 ### Styling
-
-You can update the `./index.css` or create new `.css` files and import them into your current css or js files depending on your needs.
+- Main styles are in `./src/index.css`
+- Professional color scheme with blue, green, and red accents
+- Responsive grid layouts for all sections
 
 ### Components
-
-Add more files into your `./src/components` or styles folder as you need them and import them into your current files as needed.
-
-💡Note: There is an example using the Context API inside `pages/demo.js`;
+- `Navbar` - Navigation with company branding and emergency contact
+- `Footer` - Company info, service links, and business hours
+- All components are in `./src/components/`
 
 ### Pages
+- All pages are in `./src/pages/`
+- Routes are configured in `./src/routes.jsx`
+- Each page follows a consistent structure with hero sections and content areas
 
-Add more files into your `./js/pages` and import them in `./routes.jsx`.
-Each page must match at least one route inside `routes.jsx`
+## 📱 Contact Information
+
+The website includes prominent contact information:
+- Phone: (555) 123-4567
+- Email: info@petertechservices.com
+- Emergency service available 24/7
+
+## 🛠 Services Covered
+
+- Refrigerator & Freezer Repair
+- Washer & Dryer Repair  
+- Dishwasher Repair
+- Oven, Range & Cooktop Repair
+- Microwave Repair
+- Emergency Appliance Repair
+- And more appliance services
+
+## 📦 Build & Deploy
+
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 🏢 About Peter Tech Services LLC
+
+Peter Tech Services LLC is a professional appliance repair company serving the greater metropolitan area since 2010. We specialize in same-day repairs for all major appliance brands with licensed, insured technicians.
 
 ### Centralized Store with useReducer
 
