@@ -9,6 +9,9 @@ import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
+import ReservaForm from "./components/ReservaForm";
+import Catalogo from "./components/Catalogo";
+import MisReservas from "./components/MisReservas";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +28,11 @@ export const router = createBrowserRouter(
         <Route path= "/" element={<Home />} />
         <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
         <Route path="/demo" element={<Demo />} />
+        
+        {/* Sistema de Reservas */}
+        <Route path="/reservar" element={<ReservaForm />} />
+        <Route path="/catalogo" element={<Catalogo />} />
+        <Route path="/mis-reservas" element={<MisReservas />} />
       </Route>
     )
 );

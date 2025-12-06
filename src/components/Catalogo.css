@@ -1,0 +1,208 @@
+/* Contenedor */
+.catalogo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.catalogo-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.catalogo-header h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.catalogo-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Loading y Error */
+.catalogo-loading,
+.catalogo-error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.catalogo-error {
+  color: #dc3545;
+}
+
+/* Secciones */
+.catalogo-section {
+  margin-bottom: 4rem;
+}
+
+.catalogo-section h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 1rem;
+}
+
+/* Grid de servicios */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.servicio-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.servicio-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+.servicio-content {
+  padding: 1.5rem;
+}
+
+.servicio-content h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.servicio-content .descripcion {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.servicio-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  gap: 0.75rem;
+}
+
+.precio {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+/* Grid de barberos */
+.barberos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.barbero-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: white;
+}
+
+.barbero-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.barbero-header {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.barbero-header h4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.barbero-content {
+  padding: 1.5rem;
+}
+
+.barbero-content p {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.barbero-content strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.estado {
+  margin-top: 1rem;
+  font-weight: 600;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .catalogo-container {
+    padding: 1rem;
+  }
+
+  .catalogo-header h2 {
+    font-size: 2rem;
+  }
+
+  .catalogo-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .servicios-grid,
+  .barberos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalogo-container {
+    padding: 0.5rem;
+  }
+
+  .catalogo-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .catalogo-header p {
+    font-size: 0.95rem;
+  }
+
+  .catalogo-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .servicio-content,
+  .barbero-header,
+  .barbero-content {
+    padding: 1rem;
+  }
+}

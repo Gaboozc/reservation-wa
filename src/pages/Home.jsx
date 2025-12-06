@@ -1,4 +1,4 @@
-import alphadevImageUrl from "../assets/img/alphadev-logo.jpg";
+import alphadevImageUrl from "../assets/img/alphadev-logo.png";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
 export const Home = () => {

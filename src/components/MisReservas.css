@@ -1,0 +1,262 @@
+/* Contenedor */
+.mis-reservas-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mis-reservas-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mis-reservas-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.mis-reservas-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Loading, Error, Empty */
+.mis-reservas-loading,
+.mis-reservas-error,
+.mis-reservas-empty {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.mis-reservas-error {
+  color: #dc3545;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+.mis-reservas-empty {
+  color: #666;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.empty-subtitle {
+  color: #999;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* Filtros */
+.mis-reservas-filters {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Lista de reservas */
+.mis-reservas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reserva-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #007bff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reserva-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.reserva-card.confirmed {
+  border-left-color: #28a745;
+}
+
+.reserva-card.pending {
+  border-left-color: #ffc107;
+}
+
+.reserva-card.cancelled {
+  border-left-color: #dc3545;
+  opacity: 0.7;
+}
+
+.reserva-card.completed {
+  border-left-color: #17a2b8;
+}
+
+/* Header de reserva */
+.reserva-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.reserva-info {
+  flex: 1;
+}
+
+.reserva-info h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.estado-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.estado-badge.confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.estado-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.estado-badge.cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.estado-badge.completed {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+/* Fecha y hora */
+.reserva-datetime {
+  text-align: right;
+}
+
+.reserva-datetime p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.reserva-datetime .fecha {
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.reserva-datetime .hora {
+  color: #007bff;
+  font-size: 1.3rem;
+}
+
+/* Detalles */
+.reserva-details {
+  margin-bottom: 1.5rem;
+}
+
+.reserva-details p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.reserva-details strong {
+  color: #333;
+}
+
+/* Acciones */
+.reserva-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-cancelar {
+  padding: 0.5rem 1.5rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-cancelar:hover {
+  background: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mis-reservas-container {
+    padding: 1rem;
+  }
+
+  .mis-reservas-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .reserva-header {
+    flex-direction: column;
+  }
+
+  .reserva-datetime {
+    text-align: left;
+    margin-top: 1rem;
+  }
+
+  .reserva-details p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mis-reservas-container {
+    padding: 0.5rem;
+  }
+
+  .reserva-card {
+    padding: 1rem;
+  }
+
+  .reserva-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .reserva-datetime .fecha {
+    font-size: 1rem;
+  }
+
+  .reserva-datetime .hora {
+    font-size: 1.2rem;
+  }
+}
