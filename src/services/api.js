@@ -4,10 +4,6 @@
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
 
-// Debug logs
-console.log('🔗 API_BASE_URL configurado:', API_BASE_URL);
-console.log('🔗 VITE_API_URL env var:', import.meta.env.VITE_API_URL);
-
 // Configurar headers por defecto
 const defaultHeaders = {
   'Content-Type': 'application/json',
@@ -16,8 +12,6 @@ const defaultHeaders = {
 class APIClient {
   async request(endpoint, options = {}) {
     const url = `${API_BASE_URL}${endpoint}`;
-    console.log('🌐 Haciendo request a:', url);
-    
     const config = {
       headers: defaultHeaders,
       ...options,
@@ -25,19 +19,15 @@ class APIClient {
 
     try {
       const response = await fetch(url, config);
-      console.log('📡 Response status:', response.status);
       
       if (!response.ok) {
         const error = await response.json();
-        console.error('❌ Response error:', error);
         throw new Error(error.detail || `Error ${response.status}`);
       }
 
-      const data = await response.json();
-      console.log('✅ Response data:', data);
-      return data;
+      return await response.json();
     } catch (error) {
-      console.error(`❌ API Error completo:`, error);
+      console.error(`API Error: ${error.message}`);
       throw error;
     }
   }
