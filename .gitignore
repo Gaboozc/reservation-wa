@@ -13,6 +13,20 @@ dist-ssr
 *.local
 .env
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+
+# Credentials - NEVER commit these!
+credentials.json
+*.json.backup
+service-account-*.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
