@@ -1,6 +1,8 @@
 """
 Google Calendar client para crear y sincronizar eventos
 """
+import json
+import os
 from google.oauth2.service_account import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
@@ -13,14 +15,29 @@ SCOPES = ['https://www.googleapis.com/auth/calendar']
 class GoogleCalendarClient:
     def __init__(self):
         try:
-            self.credentials = Credentials.from_service_account_file(
-                GOOGLE_SERVICE_ACCOUNT_KEY_FILE,
-                scopes=SCOPES
-            )
+            self.credentials = self._build_credentials()
             self.service = build('calendar', 'v3', credentials=self.credentials)
             self.calendar_id = GOOGLE_CALENDAR_ID
         except Exception as e:
             print(f"Error al conectar con Google Calendar: {e}")
+            raise
+
+    def _build_credentials(self):
+        """Construye credenciales desde JSON string o archivo"""
+        try:
+            # Si el contenido parece un JSON (comienza con { o [)
+            if GOOGLE_SERVICE_ACCOUNT_KEY_FILE.strip().startswith('{'):
+                print("📅 Leyendo credenciales desde variable de entorno (JSON)")
+                creds_dict = json.loads(GOOGLE_SERVICE_ACCOUNT_KEY_FILE)
+                return Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
+            # Si es una ruta de archivo que existe
+            elif os.path.isfile(GOOGLE_SERVICE_ACCOUNT_KEY_FILE):
+                print(f"📅 Leyendo credenciales desde archivo: {GOOGLE_SERVICE_ACCOUNT_KEY_FILE}")
+                return Credentials.from_service_account_file(GOOGLE_SERVICE_ACCOUNT_KEY_FILE, scopes=SCOPES)
+            else:
+                raise ValueError(f"Credenciales inválidas: no es JSON válido ni archivo existente")
+        except json.JSONDecodeError as e:
+            print(f"❌ Error al parsear JSON de credenciales: {e}")
             raise
 
     def create_event(self, 

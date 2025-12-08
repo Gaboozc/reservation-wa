@@ -2,6 +2,8 @@
 Google Sheets client para leer y escribir datos
 """
 import gspread
+import json
+import os
 from google.oauth2.service_account import Credentials
 from config.settings import GOOGLE_SERVICE_ACCOUNT_KEY_FILE, GOOGLE_SPREADSHEET_ID
 from typing import List, Dict, Any
@@ -14,14 +16,29 @@ SCOPES = [
 class GoogleSheetsClient:
     def __init__(self):
         try:
-            self.credentials = Credentials.from_service_account_file(
-                GOOGLE_SERVICE_ACCOUNT_KEY_FILE,
-                scopes=SCOPES
-            )
+            self.credentials = self._build_credentials()
             self.client = gspread.authorize(self.credentials)
             self.spreadsheet = self.client.open_by_key(GOOGLE_SPREADSHEET_ID)
         except Exception as e:
             print(f"Error al conectar con Google Sheets: {e}")
+            raise
+
+    def _build_credentials(self):
+        """Construye credenciales desde JSON string o archivo"""
+        try:
+            # Si el contenido parece un JSON (comienza con { o [)
+            if GOOGLE_SERVICE_ACCOUNT_KEY_FILE.strip().startswith('{'):
+                print("📄 Leyendo credenciales desde variable de entorno (JSON)")
+                creds_dict = json.loads(GOOGLE_SERVICE_ACCOUNT_KEY_FILE)
+                return Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
+            # Si es una ruta de archivo que existe
+            elif os.path.isfile(GOOGLE_SERVICE_ACCOUNT_KEY_FILE):
+                print(f"📄 Leyendo credenciales desde archivo: {GOOGLE_SERVICE_ACCOUNT_KEY_FILE}")
+                return Credentials.from_service_account_file(GOOGLE_SERVICE_ACCOUNT_KEY_FILE, scopes=SCOPES)
+            else:
+                raise ValueError(f"Credenciales inválidas: no es JSON válido ni archivo existente")
+        except json.JSONDecodeError as e:
+            print(f"❌ Error al parsear JSON de credenciales: {e}")
             raise
 
     def get_sheet_data(self, sheet_name: str) -> List[Dict[str, Any]]:
