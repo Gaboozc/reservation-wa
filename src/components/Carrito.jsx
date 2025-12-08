@@ -25,7 +25,8 @@ export default function Carrito({ onVolver }) {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const [errorValidacion, setErrorValidacion] = useState('');
   
-  const numeroWhatsApp = import.meta.env.VITE_WHATSAPP_NUMBER || '+52563713563';
+  const numeroWhatsApp = import.meta.env.VITE_WHATSAPP_NUMBER || '+525525638807';
+  console.log('📱 Número WhatsApp del negocio:', numeroWhatsApp);
 
   if (!cargado) {
     return <div className="carrito-loading">Cargando carrito...</div>;
@@ -203,14 +204,14 @@ export default function Carrito({ onVolver }) {
               </div>
 
               <div className="form-group">
-                <label htmlFor="telefono">Teléfono WhatsApp *</label>
+                <label htmlFor="telefono">Tu teléfono de contacto *</label>
                 <input 
                   type="tel"
                   id="telefono"
                   name="telefono"
                   value={formulario.telefono}
                   onChange={handleInputChange}
-                  placeholder="Ej: 3001234567"
+                  placeholder="Ej: 5512345678"
                   className="form-input"
                 />
               </div>

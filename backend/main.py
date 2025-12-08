@@ -13,13 +13,22 @@ app = FastAPI(
     debug=DEBUG
 )
 
-# CORS
+# CORS - Permitir dominios de Vercel y localhost
+allowed_origins = [
+    FRONTEND_URL,
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://reservation-wa.vercel.app",
+    "https://*.vercel.app"  # Todos los subdominios de Vercel
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL, "http://localhost:5173", "http://localhost:3000"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_origin_regex=r"https://.*\.vercel\.app"  # Regex para dominios de preview
 )
 
 # Incluir routers
