@@ -1,0 +1,369 @@
+═══════════════════════════════════════════════════════════════════════
+📋 GUÍA COMPLETA: SISTEMA DE RESERVAS WHATSAPP - DEPLOYMENT
+═══════════════════════════════════════════════════════════════════════
+
+Esta es una plantilla COMPLETA para crear sistemas de reservas por WhatsApp.
+Cada cliente tendrá sus propios datos (números, emails, hojas de cálculo, etc.)
+
+🎯 LO QUE NECESITAS ANTES DE EMPEZAR:
+═══════════════════════════════════════════════════════════════════════
+
+✅ Cuenta Google del cliente
+✅ Número WhatsApp del negocio del cliente  
+✅ Cuenta GitHub gratuita
+✅ Cuenta Vercel gratuita (conectada a GitHub)
+✅ Cuenta Render gratuita
+
+📁 PASO 1: PREPARAR ARCHIVOS LOCALES
+═══════════════════════════════════════════════════════════════════════
+
+1.1) LOGO Y TÍTULO DE LA PÁGINA (index.html)
+────────────────────────────────────────────
+📍 ARCHIVO: index.html (línea 4-6)
+
+CAMBIAR:
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <title>PeterTech Services LLC</title>
+
+POR:
+    <link rel="icon" type="image/svg+xml" href="/logo-cliente.svg" />
+    <title>NOMBRE-DEL-NEGOCIO - Sistema de Reservas</title>
+
+EJEMPLO:
+    <link rel="icon" type="image/svg+xml" href="/alphadev-logo.svg" />
+    <title>AlphaDev - Sistema de Reservas</title>
+
+💡 LOGO: Pon el archivo logo-cliente.svg en la carpeta public/
+
+1.2) NÚMERO DE WHATSAPP (2 lugares)
+────────────────────────────────────
+
+📍 ARCHIVO: src/components/Carrito.jsx (línea 29)
+CAMBIAR: const numeroWhatsApp = import.meta.env.VITE_WHATSAPP_NUMBER || '+525525638807';
+POR:     const numeroWhatsApp = import.meta.env.VITE_WHATSAPP_NUMBER || '+NUMERO-DEL-CLIENTE';
+
+📍 TAMBIÉN cambiarás esto en las variables de entorno de Vercel (más abajo)
+
+1.3) CONFIGURACIÓN GOOGLE SHEETS Y CALENDAR
+────────────────────────────────────────────
+
+📍 ARCHIVO: backend/config/settings.py
+
+ESTAS VARIABLES se configuran en RENDER (no tocar el código):
+• GOOGLE_SERVICE_ACCOUNT_EMAIL = Email del service account
+• GOOGLE_SHEETS_CREDENTIALS = JSON completo del service account  
+• GOOGLE_SHEET_ID = ID de la hoja de cálculo
+• GOOGLE_CALENDAR_ID = Email del calendario de Google
+
+🔧 PASO 2: CREAR SERVICE ACCOUNT DE GOOGLE
+═══════════════════════════════════════════════════════════════════════
+
+2.1) IR A GOOGLE CLOUD CONSOLE
+────────────────────────────────
+🌐 https://console.cloud.google.com
+
+2.2) CREAR PROYECTO NUEVO
+─────────────────────────
+• Click "Select Project" (arriba)
+• Click "NEW PROJECT"  
+• Nombre: "reservas-NOMBRE-CLIENTE"
+• Click "CREATE"
+
+2.3) ACTIVAR APIs NECESARIAS
+────────────────────────────
+🌐 https://console.cloud.google.com/apis/library
+
+Buscar y HABILITAR estas 2 APIs:
+✅ Google Sheets API
+✅ Google Calendar API
+
+2.4) CREAR SERVICE ACCOUNT
+──────────────────────────
+🌐 https://console.cloud.google.com/iam-admin/serviceaccounts
+
+• Click "CREATE SERVICE ACCOUNT"
+• Service account name: "wa-reservas-CLIENTE"  
+• Service account ID: se genera automático
+• Click "CREATE AND CONTINUE"
+• Role: "Editor" 
+• Click "CONTINUE" → "DONE"
+
+2.5) GENERAR CLAVE JSON
+───────────────────────
+• Click en el service account que creaste
+• Tab "KEYS"
+• "ADD KEY" → "Create new key"
+• Tipo: JSON
+• Click "CREATE"
+• ⬇️ Se descarga archivo JSON - GUÁRDALO BIEN
+
+2.6) COPIAR EMAIL DEL SERVICE ACCOUNT
+─────────────────────────────────────
+📋 Copia el email que aparece así: wa-reservas-cliente@proyecto-123.iam.gserviceaccount.com
+
+📊 PASO 3: CREAR GOOGLE SHEET
+═══════════════════════════════════════════════════════════════════════
+
+3.1) CREAR HOJA NUEVA
+─────────────────────
+🌐 https://sheets.google.com
+• "Blank spreadsheet"
+• Nombre: "Reservas CLIENTE"
+
+3.2) COMPARTIR CON SERVICE ACCOUNT
+──────────────────────────────────
+• Botón "Share" (arriba derecha)
+• Pegar el EMAIL del service account (paso 2.6)
+• Permission: "Editor"
+• ✅ Uncheck "Notify people"
+• Click "Share"
+
+3.3) COPIAR ID DE LA HOJA
+─────────────────────────
+📋 En la URL: https://docs.google.com/spreadsheets/d/ABC123XYZ789/edit
+Copiar la parte ABC123XYZ789 (eso es el SHEET_ID)
+
+3.4) CREAR HOJAS (TABS) NECESARIAS
+──────────────────────────────────
+Crear exactamente estas 5 hojas con estos nombres:
+
+🔸 HOJA "Servicios":
+   Columnas: id | nombre | precio | duracion_minutos | descripcion
+
+🔸 HOJA "Barberos":  
+   Columnas: id | nombre | especialidad | activo
+
+🔸 HOJA "Horarios":
+   Columnas: barbero_id | dia_semana | hora_inicio | hora_fin | activo
+
+🔸 HOJA "Catálogo":
+   Columnas: id | nombre | descripcion | precio | categoria | imagen | activo
+
+🔸 HOJA "Reservas":
+   Columnas: id | cliente_nombre | cliente_telefono | cliente_email | barbero_id | servicio_id | fecha | hora | estado | notas | whatsapp_link | created_at
+
+📅 PASO 4: CONFIGURAR GOOGLE CALENDAR
+═══════════════════════════════════════════════════════════════════════
+
+4.1) CREAR CALENDARIO
+─────────────────────
+🌐 https://calendar.google.com
+• Lado izquierdo: "+" junto a "Other calendars"
+• "Create new calendar"
+• Name: "Reservas CLIENTE"
+• Click "Create calendar"
+
+4.2) COMPARTIR CON SERVICE ACCOUNT
+──────────────────────────────────
+• Click en el calendario que creaste
+• "Settings and sharing"
+• Scroll a "Share with specific people"
+• "Add people"
+• Email: EL EMAIL DEL SERVICE ACCOUNT (paso 2.6)
+• Permission: "Make changes to events"
+• Click "Send"
+
+4.3) COPIAR EMAIL DEL CALENDARIO
+────────────────────────────────
+📋 En "Settings" → "Integrate calendar" → copiar el "Calendar ID"
+Ejemplo: abc123@group.calendar.google.com
+
+🚀 PASO 5: SUBIR CÓDIGO A GITHUB
+═══════════════════════════════════════════════════════════════════════
+
+5.1) CREAR REPOSITORIO
+──────────────────────
+🌐 https://github.com/new
+
+• Repository name: "reservas-NOMBRE-CLIENTE"
+• Description: "Sistema de reservas WhatsApp para CLIENTE"  
+• ✅ Public
+• ✅ Add README
+• Click "Create repository"
+
+5.2) SUBIR CÓDIGO LOCAL
+───────────────────────
+Abrir terminal en la carpeta del proyecto:
+
+git init
+git add .
+git commit -m "Initial commit - Sistema reservas CLIENTE"
+git branch -M main
+git remote add origin https://github.com/TU-USUARIO/reservas-NOMBRE-CLIENTE.git
+git push -u origin main
+
+🖥️ PASO 6: DEPLOYMENT BACKEND (RENDER)
+═══════════════════════════════════════════════════════════════════════
+
+6.1) CREAR CUENTA Y PROYECTO
+────────────────────────────
+🌐 https://render.com
+• "Sign up" con GitHub
+• "New +" → "Web Service"
+• "Connect" al repositorio que creaste
+
+6.2) CONFIGURACIÓN BÁSICA
+─────────────────────────
+• Name: reservas-CLIENTE-backend
+• Region: Oregon (US West)
+• Branch: main
+• Root Directory: backend
+• Runtime: Python 3
+• Build Command: pip install -r requirements.txt
+• Start Command: uvicorn main:app --host 0.0.0.0 --port $PORT
+
+6.3) VARIABLES DE ENTORNO
+─────────────────────────
+⚠️ MUY IMPORTANTE: Agregar todas estas variables en "Environment Variables":
+
+Name: GOOGLE_SHEETS_CREDENTIALS
+Value: [PEGAR TODO EL CONTENIDO DEL ARCHIVO JSON - TODO EN UNA SOLA LÍNEA]
+
+Name: GOOGLE_SERVICE_ACCOUNT_EMAIL  
+Value: wa-reservas-cliente@proyecto-123.iam.gserviceaccount.com
+
+Name: GOOGLE_SHEET_ID
+Value: ABC123XYZ789 (el ID que copiaste en paso 3.3)
+
+Name: GOOGLE_CALENDAR_ID
+Value: abc123@group.calendar.google.com (paso 4.3)
+
+Name: BACKEND_URL
+Value: https://reservas-CLIENTE-backend.onrender.com
+
+Name: FRONTEND_URL
+Value: https://reservas-CLIENTE.vercel.app
+
+Name: DEBUG
+Value: false
+
+6.4) DEPLOY
+───────────
+• Click "Create Web Service"
+• ⏳ Espera 5-10 minutos
+• ✅ Debe decir "Live" en verde
+
+6.5) PROBAR BACKEND
+───────────────────
+🌐 https://reservas-CLIENTE-backend.onrender.com/api/servicios
+Debe devolver: [] o datos JSON
+
+🌐 PASO 7: DEPLOYMENT FRONTEND (VERCEL)  
+═══════════════════════════════════════════════════════════════════════
+
+7.1) CREAR PROYECTO
+───────────────────
+🌐 https://vercel.com
+• "Sign up" con GitHub
+• "Add New..." → "Project" 
+• "Import" el repositorio GitHub
+• Framework: Vite
+• Root Directory: . (raíz)
+
+7.2) VARIABLES DE ENTORNO
+─────────────────────────
+En "Settings" → "Environment Variables" agregar:
+
+Name: VITE_API_URL
+Value: https://reservas-CLIENTE-backend.onrender.com/api
+
+Name: VITE_WHATSAPP_NUMBER
+Value: +5219999999999 (número WhatsApp del cliente)
+
+7.3) DEPLOY
+───────────
+• Click "Deploy"
+• ⏳ Espera 2-3 minutos
+• ✅ Debe decir "Ready"
+
+📱 PASO 8: CONFIGURACIÓN FINAL
+═══════════════════════════════════════════════════════════════════════
+
+8.1) ACTUALIZAR URLs EN RENDER
+──────────────────────────────
+Volver a Render → Settings → Environment Variables
+
+CAMBIAR:
+FRONTEND_URL = https://reservas-CLIENTE.vercel.app (URL real de Vercel)
+
+• Click "Save Changes"
+• Hacer "Manual Deploy"
+
+8.2) PROBAR TODO
+────────────────
+🌐 Abrir URL de Vercel
+• ✅ Debe cargar la página
+• ✅ Ir a "Catálogo" - debe cargar sin errores  
+• ✅ Agregar producto al carrito
+• ✅ Ir a checkout - debe redirigir a WhatsApp
+
+🎨 PASO 9: PERSONALIZACIÓN POR CLIENTE
+═══════════════════════════════════════════════════════════════════════
+
+Para cada NUEVO cliente, cambiar:
+
+📍 FRONTEND (src/):
+──────────────────
+• index.html línea 4-6: logo y título
+• public/ agregar logo del cliente
+• src/components/Carrito.jsx línea 29: número WhatsApp por defecto
+
+📍 DATOS GOOGLE:
+───────────────
+• Crear nuevo proyecto Google Cloud
+• Nuevo service account
+• Nueva Google Sheet
+• Nuevo calendario  
+• Nuevas credenciales JSON
+
+📍 DEPLOYMENT:
+─────────────
+• Nuevo repositorio GitHub
+• Nuevo servicio Render con variables específicas
+• Nuevo proyecto Vercel con variables específicas
+
+🆘 SOLUCIÓN DE PROBLEMAS COMUNES
+═══════════════════════════════════════════════════════════════════════
+
+❌ Error CORS:
+• Verificar FRONTEND_URL en Render
+• Hacer redeploy del backend
+
+❌ "Failed to fetch":
+• Verificar VITE_API_URL en Vercel
+• Verificar que backend esté "Live" en Render
+
+❌ Credenciales Google:
+• Verificar que el JSON esté completo en GOOGLE_SHEETS_CREDENTIALS
+• Verificar que el service account tenga permisos en Sheet y Calendar
+
+❌ WhatsApp no redirige:
+• Verificar VITE_WHATSAPP_NUMBER en Vercel
+• Verificar formato: +52XXXXXXXXXX
+
+📋 CHECKLIST FINAL
+═══════════════════════════════════════════════════════════════════════
+
+Antes de entregar al cliente:
+
+✅ Google Sheet compartido con service account
+✅ Google Calendar compartido con service account  
+✅ Backend Live en Render
+✅ Frontend Live en Vercel
+✅ Catálogo carga productos
+✅ Carrito funciona
+✅ WhatsApp redirige correctamente
+✅ Logo y título personalizados
+✅ Datos del cliente configurados en las hojas
+
+═══════════════════════════════════════════════════════════════════════
+🎉 PLANTILLA LISTA PARA EL CLIENTE
+═══════════════════════════════════════════════════════════════════════
+
+URLS DE EJEMPLO:
+• Frontend: https://reservas-CLIENTE.vercel.app
+• Backend: https://reservas-CLIENTE-backend.onrender.com
+• Google Sheet: https://docs.google.com/spreadsheets/d/ID-AQUI/
+• Google Calendar: URL del calendario compartido
+
+Tiempo estimado total: 45-60 minutos por cliente
