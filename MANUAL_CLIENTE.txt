@@ -1,0 +1,276 @@
+═══════════════════════════════════════════════════════════════════════
+📋 MANUAL DEL CLIENTE: SISTEMA DE RESERVAS WHATSAPP
+═══════════════════════════════════════════════════════════════════════
+
+¡Felicidades! Su sistema de reservas WhatsApp está listo para usar.
+Esta guía le explica todo lo que puede hacer y lo que NO debe tocar.
+
+🎯 INFORMACIÓN DE SU SISTEMA
+═══════════════════════════════════════════════════════════════════════
+
+✅ Su sitio web: https://reservation-wa.vercel.app
+✅ Google Sheet de datos: [URL de su hoja]
+✅ Calendario de Google: [URL de su calendario]
+✅ Número WhatsApp configurado: [+52XXXXXXXXXX]
+
+📊 GOOGLE SHEETS: SU BASE DE DATOS
+═══════════════════════════════════════════════════════════════════════
+
+Su sistema usa 5 hojas de Google Sheets para funcionar:
+
+🔸 HOJA "Servicios" - SÍ PUEDE MODIFICAR
+────────────────────────────────────────
+✅ QUÉ PUEDE HACER:
+• Agregar nuevos servicios (nuevas filas)
+• Cambiar nombres de servicios
+• Modificar precios 
+• Cambiar duración en minutos
+• Actualizar descripciones
+
+⚠️ NO PUEDE:
+• Borrar las columnas (id, nombre, precio, duracion_minutos, descripcion)
+• Cambiar el orden de las columnas
+• Dejar celdas vacías en servicios activos
+
+📝 EJEMPLO CORRECTO:
+id: S001
+nombre: Corte de cabello
+precio: 150
+duracion_minutos: 30
+descripcion: Corte básico con shampoo
+
+🔸 HOJA "Barberos" - SÍ PUEDE MODIFICAR
+────────────────────────────────────────
+✅ QUÉ PUEDE HACER:
+• Agregar nuevos barberos/empleados
+• Cambiar nombres 
+• Modificar especialidades
+• Activar/desactivar barberos (activo: TRUE/FALSE)
+
+⚠️ NO PUEDE:
+• Borrar las columnas (id, nombre, especialidad, activo)
+• Cambiar IDs de barberos que ya tienen citas
+
+📝 EJEMPLO CORRECTO:
+id: B001
+nombre: Carlos Martínez
+especialidad: Cortes clásicos
+activo: TRUE
+
+🔸 HOJA "Horarios" - SÍ PUEDE MODIFICAR
+────────────────────────────────────────
+✅ QUÉ PUEDE HACER:
+• Definir horarios de trabajo por barbero
+• Cambiar días de trabajo
+• Modificar horas de inicio y fin
+• Activar/desactivar horarios
+
+⚠️ FORMATO OBLIGATORIO:
+• dia_semana: Lunes, Martes, Miércoles, Jueves, Viernes, Sábado, Domingo
+• hora_inicio: 09:00 (formato 24 horas)
+• hora_fin: 18:00 (formato 24 horas)
+
+📝 EJEMPLO CORRECTO:
+barbero_id: B001
+dia_semana: Lunes
+hora_inicio: 09:00
+hora_fin: 18:00
+activo: TRUE
+
+🔸 HOJA "Catálogo" - SÍ PUEDE MODIFICAR
+────────────────────────────────────────
+✅ QUÉ PUEDE HACER:
+• Agregar productos para venta
+• Cambiar precios y descripciones
+• Activar/desactivar productos
+• Cambiar categorías
+
+⚠️ NO PUEDE:
+• Borrar las columnas obligatorias
+• Usar caracteres especiales en URLs de imágenes
+
+📝 EJEMPLO CORRECTO:
+id: P001
+nombre: Shampoo Premium
+descripcion: Shampoo anticaspa premium
+precio: 250
+categoria: Productos
+imagen: https://ejemplo.com/shampoo.jpg
+activo: TRUE
+
+🔸 HOJA "Reservas" - ⚠️ NO TOCAR NUNCA
+────────────────────────────────────────
+❌ ESTA HOJA ES AUTOMÁTICA:
+• Se llena sola cuando los clientes hacen reservas
+• NO modifique, borre o agregue nada
+• Solo puede CONSULTAR para ver las reservas
+
+✅ PUEDE VER:
+• Nombres de clientes
+• Teléfonos y emails
+• Fechas y horas de citas
+• Estado de las reservas
+
+📅 GOOGLE CALENDAR: SUS CITAS
+═══════════════════════════════════════════════════════════════════════
+
+✅ QUÉ PUEDE HACER:
+• Ver todas las citas programadas
+• Reagendar citas arrastrándolas a otra hora
+• Agregar notas a las citas existentes
+• Marcar citas como completadas
+
+⚠️ NO DEBE:
+• Borrar citas (se perderá la sincronización)
+• Cambiar el nombre del calendario
+• Modificar los permisos de acceso
+
+🔧 CONFIGURACIONES QUE PUEDE CAMBIAR
+═══════════════════════════════════════════════════════════════════════
+
+✅ EN GOOGLE SHEETS SOLAMENTE:
+────────────────────────────────
+• Precios de servicios
+• Nombres de barberos y servicios
+• Horarios de trabajo
+• Productos del catálogo
+• Descripciones y especialidades
+
+⚠️ NUNCA TOQUE:
+─────────────────
+• El archivo de programación (código)
+• Las variables de configuración web
+• Los permisos de la hoja de cálculo
+• Las fórmulas (si las hay)
+
+🛠️ TAREAS DE MANTENIMIENTO DIARIAS
+═══════════════════════════════════════════════════════════════════════
+
+📋 CADA MAÑANA (5 minutos):
+──────────────────────────
+1. Abrir Google Sheets
+2. Revisar hoja "Reservas" para citas del día
+3. Confirmar disponibilidad de barberos
+4. Verificar que los precios estén actualizados
+
+📋 CADA SEMANA (10 minutos):
+───────────────────────────
+1. Actualizar horarios si hay cambios
+2. Revisar inventario en hoja "Catálogo"
+3. Verificar que todos los barberos estén activos
+4. Limpiar reservas muy antiguas (mayores a 6 meses)
+
+📞 FLUJO DE RESERVAS PARA EL CLIENTE
+═══════════════════════════════════════════════════════════════════════
+
+🔄 ASÍ FUNCIONA AUTOMÁTICAMENTE:
+──────────────────────────────────
+1. Cliente entra a su sitio web
+2. Selecciona servicio y barbero
+3. Escoge fecha y hora disponible
+4. Llena sus datos (nombre, teléfono, email)
+5. Click en "Reservar"
+6. Se crea automáticamente:
+   ✅ Fila nueva en "Reservas"
+   ✅ Evento en Google Calendar
+   ✅ Link de WhatsApp para confirmación
+
+📱 CONFIRMACIÓN POR WHATSAPP:
+────────────────────────────
+• El cliente recibe un mensaje automático
+• Puede confirmar o cancelar la cita
+• Usted recibe la confirmación en WhatsApp
+
+⚠️ PROBLEMAS COMUNES Y SOLUCIONES
+═══════════════════════════════════════════════════════════════════════
+
+❌ "No aparecen horarios disponibles"
+──────────────────────────────────
+✅ SOLUCIÓN:
+• Verificar hoja "Horarios" - debe tener activo: TRUE
+• Confirmar que hora_inicio sea menor que hora_fin
+• Verificar formato de horas (09:00, no 9:00 AM)
+
+❌ "El precio no se actualiza en el sitio"
+────────────────────────────────────────
+✅ SOLUCIÓN:
+• Guardar cambios en Google Sheets
+• Esperar 1-2 minutos para sincronización
+• Refrescar la página web (Ctrl+F5)
+
+❌ "No llegan las reservas"
+─────────────────────────
+✅ SOLUCIÓN:
+• Verificar que su WhatsApp esté activo
+• Confirmar que el número en configuración sea correcto
+• Revisar hoja "Reservas" - las citas sí se guardan
+
+❌ "Barbero no aparece disponible"
+────────────────────────────────
+✅ SOLUCIÓN:
+• En hoja "Barberos": cambiar activo a TRUE
+• Verificar que tenga horarios en hoja "Horarios"
+• Confirmar que el barbero_id coincida
+
+🆘 SOPORTE TÉCNICO
+═══════════════════════════════════════════════════════════════════════
+
+📞 PARA PROBLEMAS CON:
+────────────────────
+• Google Sheets no guarda: Problema de internet
+• WhatsApp no llega: Verificar número configurado
+• Sitio web no carga: Contactar soporte técnico
+• Horarios incorrectos: Revisar formato en Sheets
+
+⚠️ CUÁNDO CONTACTAR SOPORTE:
+───────────────────────────
+• El sitio web no funciona (error 500)
+• No se pueden hacer reservas por más de 2 horas
+• Aparecen mensajes de error técnicos
+• Los datos no se sincronizan después de 5 minutos
+
+📋 INFORMACIÓN TÉCNICA (NO MODIFICAR)
+═══════════════════════════════════════════════════════════════════════
+
+🔐 CREDENCIALES Y ACCESOS:
+─────────────────────────
+• Google Service Account: [Configurado]
+• Dominio web: [Su dominio .vercel.app]
+• Base de datos: Google Sheets
+• Notificaciones: WhatsApp Web
+
+⚙️ CONFIGURACIÓN ACTUAL:
+──────────────────────
+• Zona horaria: América/México
+• Formato de hora: 24 horas
+• Idioma: Español
+• Moneda: Pesos mexicanos ($)
+
+═══════════════════════════════════════════════════════════════════════
+✅ RESUMEN: LO QUE SÍ PUEDE HACER
+═══════════════════════════════════════════════════════════════════════
+
+👍 MODIFICAR LIBREMENTE:
+• Precios y servicios
+• Nombres de barberos
+• Horarios de trabajo
+• Productos en catálogo
+• Descripciones y textos
+
+👀 SOLO CONSULTAR:
+• Hoja de "Reservas"
+• Google Calendar
+• Estadísticas de uso
+
+❌ NUNCA TOCAR:
+• Código del sistema
+• Permisos de Google
+• Variables de configuración
+• Estructura de las hojas
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Su sistema está listo para recibir reservas las 24 horas!
+Para soporte técnico, contacte a su desarrollador.
+
+═══════════════════════════════════════════════════════════════════════
