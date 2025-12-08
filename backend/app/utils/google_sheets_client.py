@@ -26,19 +26,28 @@ class GoogleSheetsClient:
     def _build_credentials(self):
         """Construye credenciales desde JSON string o archivo"""
         try:
+            creds_content = GOOGLE_SERVICE_ACCOUNT_KEY_FILE.strip()
+            
+            # Debug: mostrar tipo y longitud
+            print(f"📄 Tipo de credenciales: {type(creds_content)}")
+            print(f"📄 Longitud: {len(creds_content)} caracteres")
+            print(f"📄 Primeros 100 chars: {creds_content[:100]}")
+            
             # Si el contenido parece un JSON (comienza con { o [)
-            if GOOGLE_SERVICE_ACCOUNT_KEY_FILE.strip().startswith('{'):
-                print("📄 Leyendo credenciales desde variable de entorno (JSON)")
-                creds_dict = json.loads(GOOGLE_SERVICE_ACCOUNT_KEY_FILE)
+            if creds_content.startswith('{'):
+                print("📄 Detectado: JSON string desde variable de entorno")
+                creds_dict = json.loads(creds_content)
+                print(f"✅ JSON parseado exitosamente. Claves: {list(creds_dict.keys())}")
                 return Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
             # Si es una ruta de archivo que existe
-            elif os.path.isfile(GOOGLE_SERVICE_ACCOUNT_KEY_FILE):
-                print(f"📄 Leyendo credenciales desde archivo: {GOOGLE_SERVICE_ACCOUNT_KEY_FILE}")
-                return Credentials.from_service_account_file(GOOGLE_SERVICE_ACCOUNT_KEY_FILE, scopes=SCOPES)
+            elif os.path.isfile(creds_content):
+                print(f"📄 Detectado: Archivo en {creds_content}")
+                return Credentials.from_service_account_file(creds_content, scopes=SCOPES)
             else:
-                raise ValueError(f"Credenciales inválidas: no es JSON válido ni archivo existente")
+                raise ValueError(f"❌ Credenciales inválidas:\n- No comienza con {{\n- No es un archivo válido\n- Contenido: {creds_content[:200]}")
         except json.JSONDecodeError as e:
-            print(f"❌ Error al parsear JSON de credenciales: {e}")
+            print(f"❌ Error al parsear JSON: {e}")
+            print(f"❌ Contenido que falló: {creds_content[:300]}")
             raise
 
     def get_sheet_data(self, sheet_name: str) -> List[Dict[str, Any]]:
