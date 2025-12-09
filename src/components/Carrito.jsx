@@ -25,7 +25,7 @@ export default function Carrito({ onVolver }) {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
   const [errorValidacion, setErrorValidacion] = useState('');
   
-  const numeroWhatsApp = import.meta.env.VITE_WHATSAPP_NUMBER || '+525525638807';
+  const numeroWhatsApp = import.meta.env.VITE_WHATSAPP_NUMBER || '+525637113563';
   console.log('📱 Número WhatsApp del negocio:', numeroWhatsApp);
 
   if (!cargado) {
